@@ -82,4 +82,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Lazy load videos when they come into viewport
+    const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const video = entry.target;
+                if (video.dataset.src) {
+                    video.querySelector('source').src = video.dataset.src;
+                    video.load();
+                    delete video.dataset.src;
+                }
+                videoObserver.unobserve(video);
+            }
+        });
+    }, {
+        rootMargin: '50px'
+    });
+
+    document.querySelectorAll('video[preload="none"]').forEach(video => {
+        videoObserver.observe(video);
+    });
 });
