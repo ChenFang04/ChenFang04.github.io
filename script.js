@@ -35,7 +35,7 @@ window.addEventListener('scroll', () => {
 });
 
 // Language switching functionality
-let currentLang = localStorage.getItem('language') || 'zh';
+let currentLang = localStorage.getItem('language') || 'en';
 
 function switchLanguage(lang) {
     currentLang = lang;
