@@ -557,6 +557,47 @@ body:lang(en) {
     font-size: 16px;
 }
 
+/* News Section */
+.news-list {
+    list-style: none;
+    padding: 0;
+}
+
+.news-item {
+    display: flex;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 17px;
+    align-items: baseline;
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-date {
+    color: #888;
+    font-size: 15px;
+    white-space: nowrap;
+    min-width: 100px;
+}
+
+.news-item p {
+    margin: 0;
+    line-height: 1.6;
+    color: #444;
+}
+
+.news-item a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.news-item a:hover {
+    text-decoration: underline;
+}
+
 /* Footer */
 footer {
     background-color: #f5f5f5;
